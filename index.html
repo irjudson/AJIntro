@@ -44,7 +44,8 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<!-- Title -->
-				<section data-background-video="https://www.youtube.com/watch?v=w-tFdreZB94">
+				<section data-background-video="assets/ProductivityFutureVision.mp4">
+
 					<div class="accent">
 						<h1>AllJoyn 101:</h1>
 						<h3>Make smarter devices.</h3>
@@ -300,7 +301,8 @@
 					<!-- Common Definitions -->
 					<section>
 					<h1>Common Definitions</h1>
-					<pre><code class="c" style="font-size: 18px">
+					<pre>
+<code class="c" style="font-size: 18px">
 /******************************************************************************
  * Copyright (c) 2015, Ivan R. Judson. All rights reserved.
  *
@@ -342,12 +344,12 @@ static char fullServiceName[AJ_MAX_SERVICE_NAME_SIZE];
  */
 static const char* const sampleInterface[] = {
     "com.myheatworks.model1",          /* The first entry is the interface name. */
-    "?setPoint temp<y",                /* Set the water temperature */
-    "?currentTemp temp>y",             /* Get the water temperature setting */
-    "?softCurrentLimit current<y",     /* Set the soft current limit */
-    "?currentDrawInstant current>y",   /* Get the current draw at this instant */
-    "?timeOdometerValue time>i",       /* Get the number of seconds the unit has been running. */
-    "?currentOdometerValue current>i", /* Get the integral of amps where dt = 4 seconds */
+    "?setPoint temp&lty",                /* Set the water temperature */
+    "?currentTemp temp&gty",             /* Get the water temperature setting */
+    "?softCurrentLimit current&lty",     /* Set the soft current limit */
+    "?currentDrawInstant current&gty",   /* Get the current draw at this instant */
+    "?timeOdometerValue time&gti",       /* Get the number of seconds the unit has been running. */
+    "?currentOdometerValue current&gti", /* Get the integral of amps where dt = 4 seconds */
     NULL
 };
 
@@ -366,13 +368,14 @@ static const AJ_InterfaceDescription sampleInterfaces[] = {
 static const AJ_Object AppObjects[] = {
     { ServicePath, sampleInterfaces },
     { NULL }
-};
-					</code></pre>
+};</code>
+					</pre>
 					</section>
 					<!-- Service Implementation -->
 					<section>
 						<h1>Service Implementation</h1>
-						<pre><code class="cpp"  style="font-size: 18px">
+						<pre>
+<code class="c"  style="font-size: 18px">
 /******************************************************************************
  * Copyright (c) 2015, Ivan R. Judson. All rights reserved.
  *
@@ -390,8 +393,8 @@ static const AJ_Object AppObjects[] = {
  ******************************************************************************/
 #define AJ_MODULE MODEL1_SERVICE
 
-#include <stdio.h>
-#include <aj_debug.h>
+#include &ltstdio.h&gt
+#include &ltaj_debug.h&gt
 #include "alljoyn.h"
 
 #include "model1.h"
@@ -588,13 +591,13 @@ int main(int argc, char **argv)
     AJ_AlwaysPrintf(("Basic service exiting with status %d.\n", status));
 
     return status;
-}
-						</code></pre>											
+}</code></pre>											
 					</section>
 					<!-- Client Implementation -->
 					<section>
 						<h1>Client Implementation</h1>		
-						<pre><code class="cpp"  style="font-size: 18px">
+						<pre>
+<code class="c"  style="font-size: 18px">
 /******************************************************************************
  * Copyright (c) 2015, Ivan R. Judson. All rights reserved.
  *
@@ -612,10 +615,10 @@ int main(int argc, char **argv)
  ******************************************************************************/
  #define AJ_MODULE MODEL1_CLIENT
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <aj_debug.h>
-#include <alljoyn.h>
+#include &ltstdio.h&gt
+#include &ltstdlib.h&gt
+#include &ltaj_debug.h&gt
+#include &ltalljoyn.h&gt
 
 #include "model1.h"
 
@@ -843,8 +846,7 @@ int main(int argc, char **argv)
     AJ_AlwaysPrintf(("Basic client exiting with status %d.\n", status));
 
     return status;
-}
-						</code></pre>
+}</code></pre>
 					</section>
 				</section>
 
