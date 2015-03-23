@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Pike Street Theme</title>
+		<title>AllJoyn 101: Making Smart Devices</title>
 
-		<meta name="description" content="A Microsoft theme for the amazing reveal.js">
-		<meta name="author" content="Felix Rieseberg">
+		<meta name="description" content="Getting started with AllJoyn">
+		<meta name="author" content="Ivan R Judson">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -43,187 +43,837 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section data-background-video="https://compass-ssl.surface.com/assets/11/4e/114ea758-b2b9-4567-bedd-77086c3d80fb.mp4?n=vid-loop-100314.mp4">
+				<!-- Title -->
+				<section data-background-video="https://www.youtube.com/watch?v=w-tFdreZB94">
 					<div class="accent">
-						<h2>Reveal.js Theme</h2>
-						<h1>Pike Street</h1>
+						<h1>AllJoyn 101:</h1>
+						<h3>Make smarter devices.</h3>
 					</div>
-					<small>Felix Rieseberg<br />Open Source Engineer, Microsoft</small>
+					<small>Ivan R. Judson<br />Computer Scientist, Microsoft</small>
 
 					<aside class="notes">
 						Hi, I'm a Speaker Note. You can open the Speaker View by hitting [S] on your keyboard.
 					</aside>
 				</section>
 
-				<section class="inverse">
-					<h1>Icons</h1>
-					<div class="icon-group">
-						<i class="fa fa-user fa-fw"></i>
-						<i class="fa fa-users fa-fw"></i>
-						<i class="fa fa-university fa-fw"></i>
-					</div>
-					<p><a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a> is included, so go ahead and use some icons!</p>
+				<!-- Why AllJoyn -->
+				<section style="text-align: left;" data-background="assets/aapattern.png" data-background-size="200px" data-background-repeat="repeat">
+					<h1>What is AllJoyn?</h1>
+					<p class="fragment roll-in">
+						AllJoyn is...
+					</p>
+					<p class="fragment roll-in">
+						a <strong>system</strong> that allows devices to advertise and share their abilities with other devices around them.
+					</p>
+					<p class="fragment roll-in">
+						a <strong>protocol</strong> that your devices can use to interact intelligently.
+					</p>
+					<p class="fragment roll-in">
+						a <strong>library</strong> you can include in your software to make smarter devices.
+					</p>
 				</section>
+			
+				<section>
+					<!-- AllJoyn Architecture -->
+					<section data-background="assets/patternbg.png" data-background-size="700px" data-background-repeat="repeat">
+						<h2>AllJoyn System Architecture</h2>
+						Gateways. Routers. Services. Clients.
+						<aside class="notes">
+							Describe the overall architecture, drill down on each is next.
+						</aside>
+					</section>
 
-				<section data-background="assets/patternbg.png" data-background-size="700px" data-background-repeat="repeat">
-					<section>
-						<h1>Patterns & Fragments</h1>
-						<h1 class="alt">Moving Parts</h1>
-						<br />
+					<!-- AllJoyn Gateway -->
+					<section data-background="assets/patternbg.png" data-background-size="700px" data-background-repeat="repeat">
+						<h2>AllJoyn Gateway</h2>
+						<h4>Remote access and management</h4>
+						<h4>Interoperability</h4>
+						<h4>Supports open standards:</h4>
+						<h5><small>REST, XMPP, MQTT and TR-069.</small></h5>
+							
+						<aside class="notes">
+						 - Provides a standard and secure method for connecting local AllJoyn devices and applications to one or more external services through which users and service providers can access and manage AllJoyn-enabled devices and applications.
+						 - A standard API extends the interoperability already provided by AllJoyn to fully embrace external networks and remote services, by supporting plug-in protocol connectors into a standard AllJoyn Gateway Agent API enabling secure internetworking to cloud services, PAN and wireless technologies (including Bluetooth, ZigBee and Z-Wave) and other networks.
+						</aside>
+					</section>
+
+					<!-- AllJoyn Router -->
+					<section data-background="assets/patternbg.png" data-background-size="700px" data-background-repeat="repeat">
+						<h2>AllJoyn Router</h2>
+						<h4>Connect Services and Clients.</h4>
+						<h4>Cache transient information.</h4>
+						<h4>Allow for arbitrary topology.</h4>
+						<aside class="notes">
+							Routers:
+								- Are part of standard client apps/services
+								- store/forward advertisements
+						</aside>
+					</section>
+
+					<!-- AllJoyn Service -->
+					<section data-background="assets/patternbg.png" data-background-size="700px" data-background-repeat="repeat">
+						<h2>AllJoyn Service</h2>
+						<h4>Discoverable.</h4>
+						<h4>Expose interfaces.</h4>
+						<h4>Interfaces are exposed in detail.</h4>
+					</section>
+
+					<!-- AllJoyn Client -->
+					<section data-background="assets/patternbg.png" data-background-size="700px" data-background-repeat="repeat">
+						<h2>AllJoyn Client</h2>
+						<h4>Connect to Services</h4>
+						<h4>Expose Services to other Services</h4>
+						<h4>Expose Services to Users</h4>
+					</section>
+					
+					<!-- AllJoyn Cordova Plugin/Apps -->
+					<section data-background="assets/patternbg.png" data-background-size="700px" data-background-repeat="repeat">
+						<h2>AllJoyn Cordova Plugin & Apps</h2>
+						<a href="https://github.com/alljoyn-cordova">The Open Source Cordova Plugin</a>
 						<h3>
-							<span class="fragment fade-in"><i class="fa fa-rocket"></i> Hardware</span>
-							<span class="fragment fade-in"><i class="fa fa-mobile"></i> Software</span>
-							<span class="fragment fade-in"><i class="fa fa-cloud"></i> Data</span>
-							<span class="fragment fade-in"><i class="fa fa-lock"></i> Security</span>
+							<i class="fa fa-android fa-2x"></i>
+							<i class="fa fa-apple fa-2x"></i>
+							<i class="fa fa-windows fa-2x"></i>
+							<i class="fa fa-globe fa-2x"></i>
 						</h3>
 					</section>
 				</section>
 
-				<!-- Example of nested vertical slides -->
+				<!-- AllJoyn Standard vs Thin Client -->
 				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<i class="fa fa-arrow-down fa-4x"></i>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<i class="fa fa-arrow-up fa-4x"></i>
-					</section>
-				</section>
-
-				<!-- Example for Fragment Styles -->
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<!-- Example for pretty code -->
-				<section>
-					<h2>Highlighted, Editable Code!</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Code Editors</h2>
-					<p>The beauty of HTML5 & JavaScript: Embed whatever you want, including code editors like JSBin.</p>
-					<a class="jsbin-embed" href="http://jsbin.com/kutobaqobu/2/embed?js,console">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
+					<h2>AllJoyn Standard vs Thin Library</h2>
 					<table>
 						<thead>
 							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
+								<th>Standard</th>
+								<th>Thin</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
+								<td>Mobile, Laptop</td>
+								<td>RTOS</td>
+							</tr>
 							<tr>
+								<td>C, C++, Java, JS, Obj-C, Unity</td>
+								<td>C</td>
+							</tr>
 							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							<tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							<tr>
+								<td>Router optional</td>
+								<td>No Router</td>
+							</tr>
 						</tbody>
 					</table>
 				</section>
 
+				<!-- Why Microsoft? -->
 				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a speaker view. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					<h2>I'm a Microsoft Open Source Engineer</h2>
+					<a href="http://www.felixrieseberg.com/open-source-engineer-microsoft/" target="_blank">
+						<small>(Yes, really)</small>
+					</a>
+					<h3>
+						<i class="fa fa-3x fa-github"></i>
+					</h3>
+					<aside class="notes" data-markdown>
+					- It is our job to advance the whole industry by writing free, open-source code in strategically important areas.
+					- 840 repos, 54.000 GitHub stars
 					</aside>
 				</section>
 
+				<!-- Example -->
+				<section data-background="#fff">
+					<section>
+						<h4>Example</h4>
+						<h1 class="alt">Heatworks</h1>
+						<img src="assets/waterheater.png" class="noborder" />
+						<aside class="notes">
+							An innovative hot water heater.
+							<ul>
+								<li>99.9% efficient</li>
+								<li>no scaling</li>
+								<li>inexpensive and ROI pays for itself fast</li>
+							</ul>
+						</aside>											
+					</section>
+					<section>
+						<h2>Heatworks Architecture</h2>
+						<img src="assets/heatworks.png" class="fragment fade-in noborder"/>
+						<aside class="notes">
+							Here's what it takes to get the product to market.
+							<ul>
+								<li>Local network interface (and software)</li>
+								<li>Partnership to get from home network to cloud</li>
+								<li>Cloud data archicture + security</li>
+							</ul>
+							All influenced by the choices of technologies and relationships.
+							Distribution channels influence these decisions.
+						</aside>						
+					</section>
+				<!-- Control Interface -->
+					<section>
+						<h1>Control Interface</h1>
+						<table>
+							<thead>
+								<tr>
+									<th>Control</th>
+									<th>Range</th>
+									<th>Units</th>
+									<!-- <th>Type</th> -->
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Set Point</td>
+									<td>75-130</td>
+									<td>Degrees F</td>
+									<!-- <td>Byte</td> -->
+								</tr>
+								<tr>
+									<td>Current Temperature</td>
+									<td>40-160</td>
+									<td>Degrees F</td>
+									<!-- <td>Byte</td> -->
+								</tr>
+								<tr>
+									<td>Current Amps</td>
+									<td>0-50</td>
+									<td>Amps</td>
+									<!-- <td>Byte</td> -->
+								</tr>
+								<tr>
+									<td>Total Time</td>
+									<td>0-MAXINT</td>
+									<td>Seconds</td>
+									<!-- <td>Int32</td> -->
+								</tr>
+								<tr>
+									<td>Total Amps</td>
+									<td>0-MAXINT</td>
+									<td>Amps</td>
+									<!-- <td>Int32</td> -->
+								</tr>
+								<tr>
+									<td>Special Modes</td>
+									<td>0-255</td>
+									<td>Bitmask</td>
+									<!-- <td>Byte</td> -->
+								</tr>
+								<tr>
+									<td>Presets</td>
+									<td>Undefined</td>
+									<td>Undefined</td>
+									<!-- <td>Undefined</td> -->
+								</tr>																
+							</tbody>
+						</table>	
+					</section>
+
+					<section>
+					<h1>AllJoyn Interface</h1>
+					<pre><code class="xml">
+<node name="/control">
+  <interface name="com.myheatworks.model1">
+    <method name="setPoint">
+      <arg name="temp" type="y" direction="in"/>
+    </method>
+    <method name="currentTemp">
+      <arg name="temp" type="y" direction="out"/>
+    </method>
+    <method name="softCurrentLimit">
+      <arg name="current" type="y" direction="in"/>
+    </method>
+    <method name="currentDrawInstant">
+      <arg name="current" type="y" direction="out"/>
+    </method>
+    <method name="timeOdometerValue">
+      <arg name="time" type="i" direction="out"/>
+    </method>
+    <method name="currentOdometerValue">
+      <arg name="current" type="i" direction="out"/>
+    </method>
+  </interface>
+</node>
+</code>
+</pre>
+					</section>
+					<!-- Common Definitions -->
+					<section>
+					<h1>Common Definitions</h1>
+					<pre><code class="c" style="font-size: 18px">
+/******************************************************************************
+ * Copyright (c) 2015, Ivan R. Judson. All rights reserved.
+ *
+ *    Permission to use, copy, modify, and/or distribute this software for any
+ *    purpose with or without fee is hereby granted, provided that the above
+ *    copyright notice and this permission notice appear in all copies.
+ *
+ *    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ *    WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ *    MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ *    ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ *    WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ *    ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ *    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ ******************************************************************************/
+
+#define CONNECT_ATTEMPTS    10
+
+/* All times are expressed in milliseconds. */
+#define CONNECT_TIMEOUT     (1000 * 60)
+#define UNMARSHAL_TIMEOUT   (1000 * 5)
+#define SLEEP_TIME          (1000 * 2)
+#define METHOD_TIMEOUT      (100 * 10)
+
+static const char ServiceName[] = "com.myheatworks.model1";
+static const char ServicePath[] = "/control";
+static const uint16_t ServicePort = 25;
+
+/*
+ * Buffer to hold the full service name. This buffer must be big enough to hold
+ * a possible 255 characters plus a null terminator (256 bytes)
+ */
+static char fullServiceName[AJ_MAX_SERVICE_NAME_SIZE];
+
+/**
+ * The interface name followed by the method signatures.
+ *
+ * See also aj_introspect.h
+ */
+static const char* const sampleInterface[] = {
+    "com.myheatworks.model1",          /* The first entry is the interface name. */
+    "?setPoint temp<y",                /* Set the water temperature */
+    "?currentTemp temp>y",             /* Get the water temperature setting */
+    "?softCurrentLimit current<y",     /* Set the soft current limit */
+    "?currentDrawInstant current>y",   /* Get the current draw at this instant */
+    "?timeOdometerValue time>i",       /* Get the number of seconds the unit has been running. */
+    "?currentOdometerValue current>i", /* Get the integral of amps where dt = 4 seconds */
+    NULL
+};
+
+/**
+ * A NULL terminated collection of all interfaces.
+ */
+static const AJ_InterfaceDescription sampleInterfaces[] = {
+    sampleInterface,
+    NULL
+};
+
+/**
+ * Objects implemented by the application. The first member in the AJ_Object structure is the path.
+ * The second is the collection of all interfaces at that path.
+ */
+static const AJ_Object AppObjects[] = {
+    { ServicePath, sampleInterfaces },
+    { NULL }
+};
+					</code></pre>
+					</section>
+					<!-- Service Implementation -->
+					<section>
+						<h1>Service Implementation</h1>
+						<pre><code class="cpp"  style="font-size: 18px">
+/******************************************************************************
+ * Copyright (c) 2015, Ivan R. Judson. All rights reserved.
+ *
+ *    Permission to use, copy, modify, and/or distribute this software for any
+ *    purpose with or without fee is hereby granted, provided that the above
+ *    copyright notice and this permission notice appear in all copies.
+ *
+ *    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ *    WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ *    MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ *    ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ *    WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ *    ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ *    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ ******************************************************************************/
+#define AJ_MODULE MODEL1_SERVICE
+
+#include <stdio.h>
+#include <aj_debug.h>
+#include "alljoyn.h"
+
+#include "model1.h"
+
+uint8_t dbgMODEL1_SERVICE = 0;
+
+/*
+ * The value of the arguments are the indices of the
+ * object path in AppObjects (above), interface in sampleInterfaces (above), and
+ * member indices in the interface.
+ * The first index is 1 because the first entry in sampleInterface is the interface name.
+ * This makes the first index (index 0 of the methods) the second string in
+ * sampleInterface[].
+ *
+ * See also aj_introspect.h
+ */
+#define BASIC_SERVICE_SETPOINT             AJ_APP_MESSAGE_ID(0, 0, 0)
+#define BASIC_SERVICE_CURRENT_TEMP         AJ_APP_MESSAGE_ID(0, 0, 1)
+#define BASIC_SERVICE_SOFT_CURRENT_LIMIT   AJ_APP_MESSAGE_ID(0, 0, 2)
+#define BASIC_SERVICE_CURRENT_DRAW_INSTANT AJ_APP_MESSAGE_ID(0, 0, 3)
+#define BASIC_SERVICE_TIME_ODOMETER        AJ_APP_MESSAGE_ID(0, 0, 4)
+#define BASIC_SERVICE_CURRENT_ODOMETER     AJ_APP_MESSAGE_ID(0, 0, 5)
+
+int main(int argc, char **argv)
+{
+    AJ_Status status = AJ_OK;
+    AJ_BusAttachment bus;
+    uint8_t connected = FALSE;
+    uint32_t sessionId = 0;
+
+    /* One time initialization before calling any other AllJoyn APIs. */
+    AJ_Initialize();
+
+    /* This is for debug purposes and is optional. */
+    AJ_PrintXML(AppObjects);
+
+    AJ_RegisterObjects(AppObjects, NULL);
+
+    while (TRUE) {
+        AJ_Message msg;
+
+        if (!connected) {
+            status = AJ_StartService(&bus,
+                                     NULL,
+                                     CONNECT_TIMEOUT,
+                                     FALSE,
+                                     ServicePort,
+                                     ServiceName,
+                                     AJ_NAME_REQ_DO_NOT_QUEUE,
+                                     NULL);
+
+            if (status != AJ_OK) {
+                continue;
+            }
+
+            AJ_InfoPrintf(("StartService returned %d, session_id=%u\n", status, sessionId));
+            connected = TRUE;
+        }
+
+        status = AJ_UnmarshalMsg(&bus, &msg, UNMARSHAL_TIMEOUT);
+
+        if (AJ_ERR_TIMEOUT == status) {
+            continue;
+        }
+
+        if (AJ_OK == status) {
+            switch (msg.msgId) {
+            case AJ_METHOD_ACCEPT_SESSION:
+                {
+                    uint16_t port;
+                    char* joiner;
+                    AJ_UnmarshalArgs(&msg, "qus", &port, &sessionId, &joiner);
+                    status = AJ_BusReplyAcceptSession(&msg, TRUE);
+                    AJ_InfoPrintf(("Accepted session session_id=%u joiner=%s\n", sessionId, joiner));
+                }
+                break;
+
+            case BASIC_SERVICE_SETPOINT:
+                {
+                    uint8_t setPoint = 40;
+                    AJ_Message reply;
+                    AJ_UnmarshalArgs(&msg, "y", &setPoint);
+                    AJ_AlwaysPrintf(("Setting set point to: %d F.\n", setPoint));
+                    /* Make set setpoint call */
+                    AJ_MarshalReplyMsg(&msg, &reply);
+                    AJ_InfoPrintf(("Set target water temperature returned %d, session_id=%u\n", status, sessionId));
+                    status = AJ_DeliverMsg(&reply);                
+                }
+                break;
+
+            case BASIC_SERVICE_CURRENT_TEMP:
+                {
+                    uint8_t currentTemp = 42;
+                    AJ_Message reply;
+                    AJ_Arg replyArg;
+                    AJ_MarshalReplyMsg(&msg, &reply);
+                    AJ_AlwaysPrintf(("Getting current temperature: %d F.\n", currentTemp));                    
+                    /* Get the current temperature */
+                    AJ_InitArg(&replyArg, AJ_ARG_BYTE, 0, (void *)&currentTemp, 0);
+                    AJ_MarshalArg(&reply, &replyArg);
+                    AJ_InfoPrintf(("Asked for  current temperature returned %d, session_id=%u\n", status, sessionId));
+                    status = AJ_DeliverMsg(&reply);                
+                }
+                break;
+                
+            case BASIC_SERVICE_SOFT_CURRENT_LIMIT:
+                {
+                    uint8_t currentLimit = 10;
+                    AJ_Message reply;
+                    AJ_UnmarshalArgs(&msg, "y", &currentLimit);
+                    AJ_AlwaysPrintf(("Setting soft current limit to: %d amps.\n", currentLimit));
+                    /* Actually set the set point! */
+                    AJ_MarshalReplyMsg(&msg, &reply);
+                    AJ_InfoPrintf(("Setting soft current limit: returned %d, session_id=%u\n", status, sessionId));
+                    status = AJ_DeliverMsg(&reply);                
+                }
+                break;
+                
+            case BASIC_SERVICE_CURRENT_DRAW_INSTANT:
+                {
+                    uint8_t currentUsedNow = 0;
+                    AJ_Message reply;
+                    AJ_Arg replyArg;
+                    AJ_MarshalReplyMsg(&msg, &reply);
+                    AJ_AlwaysPrintf(("Getting instantaneous current draw: %d amps.\n", currentUsedNow));
+                    /* Get current draw */
+                    AJ_InitArg(&replyArg, AJ_ARG_BYTE, 0, (void *)&currentUsedNow, 0);
+                    AJ_MarshalArg(&reply, &replyArg);
+                    AJ_InfoPrintf(("Asked for instant current draw value: returned %d, session_id=%u\n", status, sessionId));
+                    status = AJ_DeliverMsg(&reply);                
+                }
+                break;
+                
+            case BASIC_SERVICE_TIME_ODOMETER:
+                {
+                    int timeRunning = 0;
+                    AJ_Message reply;
+                    AJ_Arg replyArg;
+                    AJ_MarshalReplyMsg(&msg, &reply);
+                    AJ_AlwaysPrintf(("Getting time odometer: %d seconds.\n", timeRunning));
+                    /* Get current time odometer */
+                    AJ_InitArg(&replyArg, AJ_ARG_INT32, 0, (void *)&timeRunning, 0);
+                    AJ_MarshalArg(&reply, &replyArg);
+                    AJ_InfoPrintf(("Asked for time odometer value: returned %d, session_id=%u\n", status, sessionId));
+                    status = AJ_DeliverMsg(&reply);                
+                }
+                break;
+                
+            case BASIC_SERVICE_CURRENT_ODOMETER:
+                {
+                    int ampsUsed = 0;
+                    AJ_Message reply;
+                    AJ_Arg replyArg;
+                    AJ_MarshalReplyMsg(&msg, &reply);
+                    AJ_AlwaysPrintf(("Getting current odometer: %d amps.\n", ampsUsed));
+                    /* Get current time odometer */
+                    AJ_InitArg(&replyArg, AJ_ARG_INT32, 0, (void *)&ampsUsed, 0);
+                    AJ_MarshalArg(&reply, &replyArg);
+                    AJ_InfoPrintf(("Asked for current odometer value: returned %d, session_id=%u\n", status, sessionId));
+                    status = AJ_DeliverMsg(&reply);                
+                }
+                break;
+                
+            case AJ_SIGNAL_SESSION_LOST_WITH_REASON:
+                /* Session was lost so return error to force a disconnect. */
+                {
+                    uint32_t id, reason;
+                    AJ_UnmarshalArgs(&msg, "uu", &id, &reason);
+                    AJ_AlwaysPrintf(("Session lost. ID = %u, reason = %u", id, reason));
+                }
+                status = AJ_ERR_SESSION_LOST;
+                break;
+
+            default:
+                /* Pass to the built-in handlers. */
+                status = AJ_BusHandleBusMessage(&msg);
+                break;
+            }
+        }
+
+        /* Messages MUST be discarded to free resources. */
+        AJ_CloseMsg(&msg);
+
+        if ((status == AJ_ERR_SESSION_LOST || status == AJ_ERR_READ)) {
+            AJ_AlwaysPrintf(("AllJoyn disconnect.\n"));
+            AJ_Disconnect(&bus);
+            connected = FALSE;
+
+            /* Sleep a little while before trying to reconnect. */
+            AJ_Sleep(SLEEP_TIME);
+        }
+    }
+
+    AJ_AlwaysPrintf(("Basic service exiting with status %d.\n", status));
+
+    return status;
+}
+						</code></pre>											
+					</section>
+					<!-- Client Implementation -->
+					<section>
+						<h1>Client Implementation</h1>		
+						<pre><code class="cpp"  style="font-size: 18px">
+/******************************************************************************
+ * Copyright (c) 2015, Ivan R. Judson. All rights reserved.
+ *
+ *    Permission to use, copy, modify, and/or distribute this software for any
+ *    purpose with or without fee is hereby granted, provided that the above
+ *    copyright notice and this permission notice appear in all copies.
+ *
+ *    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ *    WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ *    MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ *    ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ *    WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ *    ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ *    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ ******************************************************************************/
+ #define AJ_MODULE MODEL1_CLIENT
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <aj_debug.h>
+#include <alljoyn.h>
+
+#include "model1.h"
+
+uint8_t dbgMODEL1_CLIENT = 0;
+
+/*
+ * The value of the arguments are the indices of the
+ * object path in AppObjects (above), interface in sampleInterfaces (above), and
+ * member indices in the interface.
+ * The first index is 1 because the first entry in sampleInterface is the interface name.
+ * This makes the first index (index 0 of the methods) the second string in
+ * sampleInterface[].
+ *
+ * See also aj_introspect.h
+ */
+#define BASIC_CLIENT_SETPOINT             AJ_PRX_MESSAGE_ID(0, 0, 0)
+#define BASIC_CLIENT_CURRENT_TEMP         AJ_PRX_MESSAGE_ID(0, 0, 1)
+#define BASIC_CLIENT_SOFT_CURRENT_LIMIT   AJ_PRX_MESSAGE_ID(0, 0, 2)
+#define BASIC_CLIENT_CURRENT_DRAW_INSTANT AJ_PRX_MESSAGE_ID(0, 0, 3)
+#define BASIC_CLIENT_TIME_ODOMETER        AJ_PRX_MESSAGE_ID(0, 0, 4)
+#define BASIC_CLIENT_CURRENT_ODOMETER     AJ_PRX_MESSAGE_ID(0, 0, 5)
+
+void SetPoint(AJ_BusAttachment *bus, uint32_t sessionId, uint8_t setPoint) 
+{
+    AJ_Status status = AJ_OK;
+    AJ_Message msg;
+    status = AJ_MarshalMethodCall(bus, &msg, BASIC_CLIENT_SETPOINT, fullServiceName, sessionId, 0, METHOD_TIMEOUT);
+    if (status == AJ_OK) {
+        status = AJ_MarshalArgs(&msg, "y", setPoint);
+    }
+    if (status == AJ_OK) {
+        status = AJ_DeliverMsg(&msg);
+    }
+    AJ_InfoPrintf(("SetSetPoint() resulted in a status of 0x%04x.\n", status));
+}
+
+void GetCurrentTemp(AJ_BusAttachment *bus, uint32_t sessionId) 
+{
+    AJ_Status status = AJ_OK;
+    AJ_Message msg;
+    status = AJ_MarshalMethodCall(bus, &msg, BASIC_CLIENT_CURRENT_TEMP, fullServiceName, sessionId, 0, METHOD_TIMEOUT);
+    if (status == AJ_OK) {
+        status = AJ_DeliverMsg(&msg);
+    }
+    AJ_InfoPrintf(("GetCurrentTemp() resulted in a status of 0x%04x.\n", status));
+}
+
+void SetSoftCurrentLimit(AJ_BusAttachment *bus, uint32_t sessionId, uint8_t currentLimit) 
+{
+    AJ_Status status = AJ_OK;
+    AJ_Message msg;
+    status = AJ_MarshalMethodCall(bus, &msg, BASIC_CLIENT_SOFT_CURRENT_LIMIT, fullServiceName, sessionId, 0, METHOD_TIMEOUT);
+    if (status == AJ_OK) {
+        status = AJ_MarshalArgs(&msg, "y", currentLimit);
+    }
+    if (status == AJ_OK) {
+        status = AJ_DeliverMsg(&msg);
+    }
+    AJ_InfoPrintf(("SetSoftCurrentLimit() resulted in a status of 0x%04x.\n", status));
+}
+
+void GetCurrentDraw(AJ_BusAttachment *bus, uint32_t sessionId) 
+{
+    AJ_Status status = AJ_OK;
+    AJ_Message msg;
+    status = AJ_MarshalMethodCall(bus, &msg, BASIC_CLIENT_CURRENT_DRAW_INSTANT, fullServiceName, sessionId, 0, METHOD_TIMEOUT);
+    if (status == AJ_OK) {
+        status = AJ_DeliverMsg(&msg);
+    }
+    AJ_InfoPrintf(("GetCurrentDraw() resulted in a status of 0x%04x.\n", status));
+}
+
+void GetTimeOdometer(AJ_BusAttachment *bus, uint32_t sessionId) 
+{
+    AJ_Status status = AJ_OK;
+    AJ_Message msg;
+    status = AJ_MarshalMethodCall(bus, &msg, BASIC_CLIENT_TIME_ODOMETER, fullServiceName, sessionId, 0, METHOD_TIMEOUT);
+    if (status == AJ_OK) {
+        status = AJ_DeliverMsg(&msg);
+    }
+    AJ_InfoPrintf(("GetTimeOdometer() resulted in a status of 0x%04x.\n", status));
+}
+
+void GetCurrentOdometer(AJ_BusAttachment *bus, uint32_t sessionId) 
+{
+    AJ_Status status = AJ_OK;
+    AJ_Message msg;
+    status = AJ_MarshalMethodCall(bus, &msg, BASIC_CLIENT_CURRENT_ODOMETER, fullServiceName, sessionId, 0, METHOD_TIMEOUT);
+    if (status == AJ_OK) {
+        status = AJ_DeliverMsg(&msg);
+    }
+    AJ_InfoPrintf(("GetCurrentOdometer() resulted in a status of 0x%04x.\n", status));
+}
+
+int main(int argc, char **argv)
+{
+    AJ_Status status = AJ_OK;
+    AJ_BusAttachment bus;
+    uint8_t connected = FALSE;
+    uint8_t done = FALSE;
+    uint32_t sessionId = 0;
+
+    /*
+     * One time initialization before calling any other AllJoyn APIs
+     */
+    AJ_Initialize();
+    AJ_PrintXML(AppObjects);
+    AJ_RegisterObjects(NULL, AppObjects);
+
+    while (!done) {
+        AJ_Message msg;
+
+        if (!connected) {
+            status = AJ_StartClientByName(&bus,
+                                          NULL,
+                                          CONNECT_TIMEOUT,
+                                          FALSE,
+                                          ServiceName,
+                                          ServicePort,
+                                          &sessionId,
+                                          NULL,
+                                          fullServiceName);
+
+            if (status == AJ_OK) {
+                AJ_InfoPrintf(("StartClient returned %d, sessionId=%u.\n", status, sessionId));
+                connected = TRUE;
+                SetPoint(&bus, sessionId, 50);
+                GetCurrentTemp(&bus, sessionId);
+                SetSoftCurrentLimit(&bus, sessionId, 48);
+                GetCurrentDraw(&bus, sessionId);
+                GetTimeOdometer(&bus, sessionId);
+                GetCurrentOdometer(&bus, sessionId);
+            } else {
+                AJ_InfoPrintf(("StartClient returned 0x%04x.\n", status));
+                break;
+            }
+        }
+
+        status = AJ_UnmarshalMsg(&bus, &msg, UNMARSHAL_TIMEOUT);
+
+        if (AJ_ERR_TIMEOUT == status) {
+            continue;
+        }
+
+        if (AJ_OK == status) {
+            switch (msg.msgId) {
+            case AJ_REPLY_ID(BASIC_CLIENT_CURRENT_TEMP):
+                {
+                    AJ_Arg arg;
+                    status = AJ_UnmarshalArg(&msg, &arg);
+                    if (AJ_OK == status) {
+                        AJ_AlwaysPrintf(("'%s.%s' (path='%s') returned '%d'.\n", fullServiceName, "currentTemp",
+                                         ServicePath, (int)*(arg.val.v_byte)));
+                    } else {
+                        AJ_InfoPrintf(("AJ_UnmarshalArg() returned status %d.\n", status));
+                        GetCurrentTemp(&bus, sessionId);
+                    }
+                }
+            break;
+            case AJ_REPLY_ID(BASIC_CLIENT_CURRENT_DRAW_INSTANT):
+                {
+                    AJ_Arg arg;
+                    status = AJ_UnmarshalArg(&msg, &arg);
+                    if (AJ_OK == status) {
+                        AJ_AlwaysPrintf(("'%s.%s' (path='%s') returned '%d'.\n", fullServiceName, "currentDrawInstant",
+                                         ServicePath, (int)*(arg.val.v_byte)));
+                    } else {
+                        AJ_InfoPrintf(("AJ_UnmarshalArg() returned status %d.\n", status));
+                        GetCurrentTemp(&bus, sessionId);
+                    }
+                }
+            break;
+            case AJ_REPLY_ID(BASIC_CLIENT_TIME_ODOMETER):
+                {
+                    AJ_Arg arg;
+                    status = AJ_UnmarshalArg(&msg, &arg);
+                    if (AJ_OK == status) {
+                        AJ_AlwaysPrintf(("'%s.%s' (path='%s') returned '%d'.\n", fullServiceName, "timeOdometerValue",
+                                         ServicePath, (int)*(arg.val.v_int32)));
+                    } else {
+                        AJ_InfoPrintf(("AJ_UnmarshalArg() returned status %d.\n", status));
+                        GetCurrentTemp(&bus, sessionId);
+                    }
+                }
+            break;
+            case AJ_REPLY_ID(BASIC_CLIENT_CURRENT_ODOMETER):
+                {
+                    AJ_Arg arg;
+                    status = AJ_UnmarshalArg(&msg, &arg);
+                    if (AJ_OK == status) {
+                        AJ_AlwaysPrintf(("'%s.%s' (path='%s') returned '%d'.\n", fullServiceName, "currentOdometerValue",
+                                         ServicePath, (int)*(arg.val.v_int32)));
+                    } else {
+                        AJ_InfoPrintf(("AJ_UnmarshalArg() returned status %d.\n", status));
+                        GetCurrentTemp(&bus, sessionId);
+                    }
+                }
+            break;
+            case AJ_SIGNAL_SESSION_LOST_WITH_REASON:
+                /* A session was lost so return error to force a disconnect. */
+                {
+                    uint32_t id, reason;
+                    AJ_UnmarshalArgs(&msg, "uu", &id, &reason);
+                    AJ_AlwaysPrintf(("Session lost. ID = %u, reason = %u", id, reason));
+                }
+                status = AJ_ERR_SESSION_LOST;
+                break;
+            default:
+                /* Pass to the built-in handlers. */
+                status = AJ_BusHandleBusMessage(&msg);
+                break;
+            }
+        }
+
+        /* Messages MUST be discarded to free resources. */
+        AJ_CloseMsg(&msg);
+
+        if (status == AJ_ERR_SESSION_LOST) {
+            AJ_AlwaysPrintf(("AllJoyn disconnect.\n"));
+            AJ_Disconnect(&bus);
+            exit(0);
+        }
+    }
+
+    AJ_AlwaysPrintf(("Basic client exiting with status %d.\n", status));
+
+    return status;
+}
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<h1>Demo!</h1>												
+				</section>
+
+				<!-- Thanks! Questions? -->
+				<section>
+					<h2>Thanks!</h2>
+
+					<div class="gravatar">
+						<img alt src="assets/ivan.jpeg" class="gravatar">
+					</div>
+
+					<p>
+						<a href="https://github.com/irjudson"><i class="fa fa-github"></i></a>
+						<a href="http://www.twitter.com/irjudson"><i class="fa fa-twitter"></i></a>
+						<a href="mailto:ivan.judson@microsoft.com"><i class="fa fa-envelope-o"></i></a>
+						Ivan R. Judson, PhD
+					</p>
+					<aside class="notes">
+						<ul>
+							<li>[F] </li>
+						</ul>
+					</aside>					
+				</section>
 			</div>
-
 		</div>
-
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
