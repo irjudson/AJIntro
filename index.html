@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>AllJoyn 101: Making Smart Devices</title>
+		<title>Building Internet of Things Devices with AllJoyn</title>
 
 		<meta name="description" content="Getting started with AllJoyn">
 		<meta name="author" content="Ivan R Judson">
@@ -47,10 +47,9 @@
 				<section data-background-video="assets/ProductivityFutureVision.mp4">
 
 					<div class="accent">
-						<h1>AllJoyn 101:</h1>
-						<h3>Make smarter devices.</h3>
+						<h2>Building Internet of Things Devices with AllJoyn</h2>
 					</div>
-					<small>Ivan R. Judson<br /><i class="fa fa-twitter"></i>: <a href="http://www.twitter.com/irjudson">@irjudson</a><br />Microsoft</small>
+					<small>Ivan R. Judson<br />@irjudson<br />ivan.judson@microsoft.com</small>
 
 					<aside class="notes">
 						Hi, I'm a Speaker Note. You can open the Speaker View by hitting [S] on your keyboard.
@@ -58,7 +57,7 @@
 				</section>
 
 				<!-- Why AllJoyn -->
-				<section style="text-align: left;" >
+					<section data-background="assets/patternbg.png" data-background-size="700px" data-background-repeat="repeat">
 					<h1>What is AllJoyn?</h1>
 					<p class="fragment roll-in">
 						AllJoyn is...
@@ -129,7 +128,7 @@
 				</section>
 
 				<!-- AllJoyn Standard vs Thin Client -->
-				<section>
+                <section data-background="assets/patternbg.png" data-background-size="700px" data-background-repeat="repeat">
 					<h2>AllJoyn Standard vs Thin Library</h2>
 					<table>
 						<thead>
@@ -144,7 +143,7 @@
 								<td>RTOS</td>
 							</tr>
 							<tr>
-								<td>C, C++, Java, JS, Obj-C, Unity</td>
+								<td>C++, C, Java, JavaScript, Objective-C</td>
 								<td>C</td>
 							</tr>
 							<tr>
@@ -157,7 +156,7 @@
 
 				<!-- Why Microsoft? -->
                 <section>
-                    <section>
+					<section data-background="assets/patternbg.png" data-background-size="700px" data-background-repeat="repeat">
                         <h2>Microsoft & AllJoyn</h2>
     
                         <aside class="notes" data-markdown>
@@ -285,9 +284,9 @@
 					</section>
 
 					<section>
-					<h1>AllJoyn Interface</h1>
-					<pre><code class="xml">
-<node name="/control">
+					   <h1>AllJoyn Interface</h1>
+					   <pre>
+<code class="xml"><node name="/control">
   <interface name="com.myheatworks.model1">
     <method name="setPoint">
       <arg name="temp" type="y" direction="in"/>
@@ -309,31 +308,13 @@
     </method>
   </interface>
 </node>
-</code>
-</pre>
-					</section>
-					<!-- Common Definitions -->
-					<section>
-					<h1>Common Definitions</h1>
-					<pre>
-<code class="c" style="font-size: 18px">
-/******************************************************************************
- * Copyright (c) 2015, Ivan R. Judson. All rights reserved.
- *
- *    Permission to use, copy, modify, and/or distribute this software for any
- *    purpose with or without fee is hereby granted, provided that the above
- *    copyright notice and this permission notice appear in all copies.
- *
- *    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
- *    WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
- *    MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
- *    ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
- *    WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
- *    ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
- *    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
- ******************************************************************************/
+</code></pre>
+                </section>
 
-#define CONNECT_ATTEMPTS    10
+                <!-- Common Definitions -->
+                <section>
+                    <h1>Common Definitions</h1>
+                    <pre><code class="c" style="font-size: 18px">#define CONNECT_ATTEMPTS    10
 
 /* All times are expressed in milliseconds. */
 #define CONNECT_TIMEOUT     (1000 * 60)
@@ -382,29 +363,13 @@ static const AJ_InterfaceDescription sampleInterfaces[] = {
 static const AJ_Object AppObjects[] = {
     { ServicePath, sampleInterfaces },
     { NULL }
-};</code>
-					</pre>
+};</code></pre>
 					</section>
 					<!-- Service Implementation -->
 					<section>
 						<h1>Service Implementation</h1>
 						<pre>
 <code class="c"  style="font-size: 18px">
-/******************************************************************************
- * Copyright (c) 2015, Ivan R. Judson. All rights reserved.
- *
- *    Permission to use, copy, modify, and/or distribute this software for any
- *    purpose with or without fee is hereby granted, provided that the above
- *    copyright notice and this permission notice appear in all copies.
- *
- *    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
- *    WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
- *    MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
- *    ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
- *    WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
- *    ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
- *    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
- ******************************************************************************/
 #define AJ_MODULE MODEL1_SERVICE
 
 #include &ltstdio.h&gt
@@ -612,21 +577,6 @@ int main(int argc, char **argv)
 						<h1>Client Implementation</h1>		
 						<pre>
 <code class="c"  style="font-size: 18px">
-/******************************************************************************
- * Copyright (c) 2015, Ivan R. Judson. All rights reserved.
- *
- *    Permission to use, copy, modify, and/or distribute this software for any
- *    purpose with or without fee is hereby granted, provided that the above
- *    copyright notice and this permission notice appear in all copies.
- *
- *    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
- *    WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
- *    MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
- *    ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
- *    WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
- *    ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
- *    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
- ******************************************************************************/
  #define AJ_MODULE MODEL1_CLIENT
 
 #include &ltstdio.h&gt
