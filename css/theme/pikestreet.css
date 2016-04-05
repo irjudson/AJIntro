@@ -72,7 +72,7 @@ div.icon-group {
   display: block;
   padding: 10px;
   overflow: auto;
-  max-height: 400px;
+  max-height: 530px;
   word-wrap: normal;
   background: #fff;
   color: #333; }
@@ -215,7 +215,8 @@ body {
 .reveal pre {
   display: block;
   position: relative;
-  width: 90%;
+  width: 90vw;
+  left: calc(-45vw + 50%);
   margin: 20px auto;
   text-align: left;
   font-size: 0.55em;
